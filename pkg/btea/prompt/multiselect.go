@@ -1,8 +1,6 @@
 package prompt
 
 import (
-	"fmt"
-
 	tea "github.com/charmbracelet/bubbletea"
 )
 
@@ -88,19 +86,19 @@ func (m model) View() string {
 		for i, choice := range m.choices {
 
 			// Is the cursor pointing at this choice?
-			cursor := " " // no cursor
+			cursor := false // no cursor
 			if m.cursor == i {
-				cursor = ">" // cursor!
+				cursor = true // cursor!
 			}
 
 			// Is this choice selected?
-			checked := " " // not selected
+			checked := false // not selected
 			if _, ok := m.selected[i]; ok {
-				checked = "x" // selected!
+				checked = true // selected!
 			}
 
 			// Render the row
-			s += fmt.Sprintf("%s [%s] %s\n", cursor, checked, choice)
+			s += Choice(cursor, checked, choice)
 		}
 
 		// The footer
@@ -110,10 +108,11 @@ func (m model) View() string {
 		for i, choice := range m.choices {
 			if _, ok := m.selected[i]; ok {
 				// Render the row
-				s += fmt.Sprintf("%s\n", choice)
+				// s += fmt.Sprintf("%s\n", choice)
+				s += Answer(choice)
 			}
-
 		}
+		s += "\n"
 	}
 
 	// Send the UI for rendering
