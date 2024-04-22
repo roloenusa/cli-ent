@@ -30,7 +30,8 @@ enum Commands {
 
     /// Positional short help
     ///
-    /// Positional arguments long help
+    /// This is the long help prompt via derived macros for positional arguments
+    /// This long help should be respected
     Positional(Positional),
 
     /// flag short help
