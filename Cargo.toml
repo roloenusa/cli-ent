@@ -1,0 +1,18 @@
+[package]
+name = "cli-ent"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.33"
+clap = { version = "4.4.3", features = ["derive"] }
+git2 = "0.18.1"
+octocrab = "0.34.1"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+tokio = { version = "1.17.0", features = ["full"] }
+clap-show = { path = "../clap-show-rs", version = "0.1.0" }
+
+[build-dependencies]
+clap_mangen = "0.2.20"
