@@ -21,15 +21,28 @@ jobs:
     - name: Build documentation
       run: cargo run -- markdown > docs/index.html
 
-    - name: switching from HTTPS to SSH
-      run: git remote set-url origin ${{ secrets.ssh }}
+    # - name: switching from HTTPS to SSH
+    #   run: git remote set-url origin ${{ secrets.ssh }}
+    # - name: check for changes
+    #   run: git status
+    # - name: stage changed files
+    #   run: git add .
+    # - name: commit changed files
+    #   run: git commit -m "Auto updating index.html"
+    # - name: fetch from rust
+    #   run: git fetch origin rust
+    # - name: push code to rust
+    #   run: git push origin HEAD:rust
+
     - name: check for changes
       run: git status
-    - name: stage changed files
-      run: git add .
-    - name: commit changed files
-      run: git commit -m "Auto updating index.html"
-    - name: fetch from rust
-      run: git fetch origin rust
-    - name: push code to rust
-      run: git push origin HEAD:rust
+    - name: Commit files # transfer the new html files back into the repository
+      run: |
+        git config --local user.name "jpadfield"
+        git add ./docs
+        git commit -m "Updating the repository GitHub html pages in the docs folder"
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
