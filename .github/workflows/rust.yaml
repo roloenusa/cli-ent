@@ -1,0 +1,22 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "rust" ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cargo build --verbose
+    - name: Build documentation
+      run: cargo run -- markdown > docs/index.html
