@@ -1,0 +1,154 @@
+<html>
+
+<head>
+  <style>
+    .section {
+      font-family: Menlo, Consolas, 'Lucida Console', monospace;
+      padding: 25px;
+      margin: auto;
+      width: 1000px;
+    }
+
+    .description {
+      padding-bottom: 1rem;
+    }
+
+    .code {
+      background: #333;
+      border-radius: 5px;
+      color: #ddd;
+      padding: 25px;
+    }
+
+    .code > div {
+      padding-bottom: 2rem;
+    }
+
+    .table {
+      display: table-row;
+    }
+
+    .table > div {
+      padding-left: 15px;
+      display: table-cell;
+    }
+
+    .code > div > div:last-child > pre {
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="section">
+
+    <h1>cli-ent</h1>
+    <div class="code">
+      <div class="description"></div>
+      <div>USAGE: cli-ent &lt;COMMAND&gt;</div>
+
+      <div>
+        <h4>Commands</h4>
+        <div class="table">
+          <div class=""><pre>add<pre></div><div><pre>Adds files to myapp</pre></div>
+        </div>
+        <div class="table">
+          <div class=""><pre>positional<pre></div><div><pre>Positional short help</pre></div>
+        </div>
+        <div class="table">
+          <div class=""><pre>flags<pre></div><div><pre>flag short help</pre></div>
+        </div>
+        <div class="table">
+          <div class=""><pre>markdown<pre></div><div><pre>markdown short help</pre></div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>cli-ent add</h2>
+
+    <div class="description">Adds files to myapp</div>
+
+    <div class="code">
+      <div>USAGE: cli-ent add [OPTIONAL] [MULTIPLE]...</div>
+
+
+      <div>
+        <h4>Arguments</h4>
+        <div class="table">
+          <div class=""><pre>   [OPTIONAL]<pre></div><div><pre></pre></div>
+        </div>
+        <div class="table">
+          <div class=""><pre>   [MULTIPLE] ...<pre></div><div><pre></pre></div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="section">
+    <h2>cli-ent positional</h2>
+
+    <div class="description">Positional short help<br /><br />Positional arguments long help</div>
+
+    <div class="code">
+      <div>USAGE: cli-ent positional &lt;POS_REQUIRED&gt; [POS_OPTIONAL]</div>
+
+
+      <div>
+        <h4>Arguments</h4>
+        <div class="table">
+          <div class=""><pre>   &lt;POS_REQUIRED&gt;<pre></div><div><pre>Positional required argument Long description of the positional argument</pre></div>
+        </div>
+        <div class="table">
+          <div class=""><pre>   [POS_OPTIONAL]<pre></div><div><pre>Positional optional argument</pre></div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="section">
+    <h2>cli-ent flags</h2>
+
+    <div class="description">flag short help<br /><br />flag arguments long help</div>
+
+    <div class="code">
+      <div>USAGE: cli-ent flags --flag &lt;FLAG&gt;</div>
+
+
+
+      <div>
+        <h4>Options</h4>
+        <div class="table">
+          <div class=""><pre>-f, --flag &lt;FLAG&gt;<pre></div><div><pre>Flag short help</pre></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section">
+    <h2>cli-ent markdown</h2>
+
+    <div class="description">markdown short help<br /><br />markdown arguments long help</div>
+
+    <div class="code">
+      <div>USAGE: cli-ent markdown </div>
+
+
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>
