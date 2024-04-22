@@ -19,7 +19,7 @@ jobs:
     - name: Build
       run: cargo build --verbose
     - name: Build documentation
-      run: cargo run -- markdown > docs/index.html
+      run: cargo run -- markdown > ./docs/index.html
 
     # - name: switching from HTTPS to SSH
     #   run: git remote set-url origin ${{ secrets.ssh }}
