@@ -1,17 +1,16 @@
 use clap::{Arg, Args, CommandFactory, Parser, Subcommand};
-use octocrab::markdown;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Positional {
-    ///
     /// Positional required argument
-    /// Long description of the positional argument
+    ///
+    /// Long description of the required positional argument
     pos_required: String,
 
     /// Positional optional argument
     ///
-    /// Long description of the positional argument
+    /// Long description of the optional positional argument
     pos_optional: Option<String>,
 
 }
